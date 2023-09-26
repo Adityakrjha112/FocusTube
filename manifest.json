@@ -1,13 +1,17 @@
 {
     "manifest_version": 3,
-    "name": "Youtube video remove",
-    "description": "this is remove video",
-    "version": "1.0.0",
-    "action":{
-        "default_popup": "index.html",
-        "default_title": "Open"
+    "name": "YouTube Element Hider",
+    "version": "1.0",
+    "description": "Hide specific elements on YouTube.",
+    "permissions": ["activeTab"],
+    "action": {
+      "default_popup": "popup.html"
     },
-    "permissions":[
-        "scripting"
+    "content_scripts": [
+      {
+        "matches": ["*://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
     ]
-}
+  }
+  
